@@ -22,7 +22,7 @@ function App() {
 
     if (_token) {
       s.setAccessToken(_token);
-      
+
       dispatch({
         type: "SET_TOKEN",
         token: _token,
@@ -47,12 +47,12 @@ function App() {
         });
       });
 
-      // s.getPlaylist("0d97434fe3cc422cbac6074d9fe44cc0").then((response) =>
-      //   dispatch({
-      //     type: "SET_DISCOVER_WEEKLY",
-      //     discover_weekly: response,
-      //   })
-      // );
+      s.getPlaylist("2D8G2eapeO4WaL7qTRxmNG").then((response) =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
 
       s.getMyTopArtists().then((response) =>
         dispatch({
@@ -60,7 +60,6 @@ function App() {
           top_artists: response,
         })
       );
-
     }
   }, [token, dispatch]);
 

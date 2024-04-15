@@ -4,7 +4,7 @@ import { useStateProvider } from "../utils/StateProvider";
 const Sidebar = () => {
   const [{ playlists }, dispatch] = useStateProvider();
 
-  console.log("Sidebar Playlist: ", playlists.items);
+  // console.log("Sidebar Playlist: ", playlists.items);
 
   return (
     <div className="max-w-[250px] basis-1/5 bg-black p-2 md:p-5">
