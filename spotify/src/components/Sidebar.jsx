@@ -1,10 +1,15 @@
 import { Home, Search, LibraryBig, ListMusic, Headphones } from "lucide-react";
 import { useStateProvider } from "../utils/StateProvider";
 
-const Sidebar = () => {
+const Sidebar = ({ sendPlaylistId }) => {
   const [{ playlists }, dispatch] = useStateProvider();
 
-  // console.log("Sidebar Playlist: ", playlists.items);
+  // console.log(playlists);
+
+  const handleClick = (event) => {
+    const playListId = event?.id;
+    sendPlaylistId(playListId);
+  };
 
   return (
     <div className="max-w-[250px] basis-1/5 bg-black p-2 md:p-5">
@@ -29,6 +34,7 @@ const Sidebar = () => {
           <ul
             key={playlist.id || index}
             className="flex gap-1 text-md md:text-lg font-semibold cursor-pointer transition ease-in-out duration-150 hover:text-white p-2 rounded"
+            onClick={() => handleClick(playlist)}
           >
             {playlist.name}
           </ul>

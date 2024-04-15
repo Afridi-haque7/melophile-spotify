@@ -7,7 +7,6 @@ export const initialState = {
   discover_weekly: null,
   top_artists: null,
   token: null,
-  // _token:null,
 };
 
 const reducer = (state, action) => {
